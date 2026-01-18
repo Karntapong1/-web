@@ -48,15 +48,25 @@ const Innovations: React.FC = () => {
                <span className="text-gray-400 text-sm">Educational</span>
             </div>
             <h2 className="text-2xl font-bold text-white mb-4">Computer Vision คืออะไร?</h2>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              วิดีโออธิบายภาพรวมของเทคโนโลยี Computer Vision และวิธีการที่ AI ประมวลผลภาพเพื่อทำความเข้าใจโลกกายภาพ 
-              โดย <strong>Google Cloud Tech</strong> อธิบายถึงการนำไปประยุกต์ใช้ในอุตสาหกรรมต่างๆ 
-              รวมถึงการตรวจสอบคุณภาพ (Quality Inspection) เพื่อเพิ่มประสิทธิภาพการผลิต
-            </p>
+            <div className="text-gray-300 mb-6 leading-relaxed space-y-4">
+              <p>
+                วิดีโอสั้นจาก <strong>Google Cloud Tech</strong> อธิบายพื้นฐานว่าคอมพิวเตอร์มองเห็นภาพเป็นข้อมูลตัวเลข (Pixels) ได้อย่างไร และสาธิตความสามารถของ Vision API ในการวิเคราะห์องค์ประกอบต่างๆ ของภาพ
+              </p>
+              <div className="bg-slate-800/50 p-4 rounded-lg border-l-2 border-primary">
+                <p className="text-sm font-semibold text-white mb-2">ตัวอย่างฟีเจอร์ที่แสดงในคลิป:</p>
+                <ul className="text-sm space-y-1 list-disc list-inside text-gray-300">
+                  <li>คอมพิวเตอร์มองเห็นภาพเป็นรหัสตัวเลข (Pixels)</li>
+                  <li>Label Detection: การระบุวัตถุ (เช่น เรือใบ)</li>
+                  <li>Face Detection: การตรวจจับใบหน้าและอารมณ์ (Joy)</li>
+                  <li>Landmark Detection: การระบุสถานที่สำคัญ (เช่น หอไอเฟล)</li>
+                </ul>
+              </div>
+            </div>
             
             <div className="space-y-4">
               <div className="flex items-center gap-4 text-sm text-gray-400">
-                <span className="flex items-center gap-1">Source: Google Cloud Tech</span>
+                <span className="flex items-center gap-1">Source: code.org youtube
+              </span>
               </div>
               
               <div className="pt-4 border-t border-slate-700">
