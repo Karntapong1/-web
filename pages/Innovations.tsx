@@ -50,7 +50,7 @@ const Innovations: React.FC = () => {
             <h2 className="text-2xl font-bold text-white mb-4">Computer Vision คืออะไร?</h2>
             <div className="text-gray-300 mb-6 leading-relaxed space-y-4">
               <p>
-                วิดีโอสั้นจาก <strong>Google Cloud Tech</strong> อธิบายพื้นฐานว่าคอมพิวเตอร์มองเห็นภาพเป็นข้อมูลตัวเลข (Pixels) ได้อย่างไร และสาธิตความสามารถของ Vision API ในการวิเคราะห์องค์ประกอบต่างๆ ของภาพ
+                วิดีโอสั้นจาก <strong>Code org </strong> อธิบายพื้นฐานว่าคอมพิวเตอร์มองเห็นภาพเป็นข้อมูลตัวเลข (Pixels) ได้อย่างไร และสาธิตความสามารถของ Vision API ในการวิเคราะห์องค์ประกอบต่างๆ ของภาพ
               </p>
               <div className="bg-slate-800/50 p-4 rounded-lg border-l-2 border-primary">
                 <p className="text-sm font-semibold text-white mb-2">ตัวอย่างฟีเจอร์ที่แสดงในคลิป:</p>
