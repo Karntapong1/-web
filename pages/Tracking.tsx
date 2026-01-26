@@ -81,13 +81,8 @@ const Tracking: React.FC = () => {
   const [lastUpdate, setLastUpdate] = useState(new Date());
 
   // ส่วนที่ 6: การนำผลงานไปแสดงบนเว็บไซต์ (Embed Integration)
-  const DEFAULT_EXCEL_URL = "https://sdumail-my.sharepoint.com/personal/u6611011940038_mail_dusit_ac_th/_layouts/15/Doc.aspx?sourcedoc={2c58e9f7-b30b-4c38-bd74-412e2b64b833}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True";
-  const [excelUrl, setExcelUrl] = useState(DEFAULT_EXCEL_URL);
-  const [inputExcelUrl, setInputExcelUrl] = useState(DEFAULT_EXCEL_URL);
-
-  const DEFAULT_MY_MAPS_URL = "https://www.google.com/maps/d/u/1/embed?mid=1em7H7pHhZs7uU2qKjkYM_tI8J_Xheh0&ehbc=2E312F&noprof=1";
-  const [mapsUrl, setMapsUrl] = useState(DEFAULT_MY_MAPS_URL);
-  const [inputMapsUrl, setInputMapsUrl] = useState(DEFAULT_MY_MAPS_URL);
+  const excelUrl = "https://1drv.ms/x/c/eef15125e3e3b40b/IQTK8caJJ91YS5eZHaJ7u10UAaoU4uwt-HTPpN_S-MYD2wo?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True";
+  const mapsUrl = "https://www.google.com/maps/d/u/1/embed?mid=1em7H7pHhZs7uU2qKjkYM_tI8J_Xheh0&ehbc=2E312F&noprof=1";
 
   // จำลอง Real-time Update ทุก 3 วินาที (Bonus)
   useEffect(() => {
@@ -119,22 +114,6 @@ const Tracking: React.FC = () => {
     setLastUpdate(new Date());
   };
 
-  const applyExcelUrl = () => {
-    let url = inputExcelUrl;
-    if (inputExcelUrl.includes('src="')) {
-      url = inputExcelUrl.match(/src="([^"]+)"/)?.[1] || inputExcelUrl;
-    }
-    setExcelUrl(url);
-  };
-
-  const applyMapsUrl = () => {
-    let url = inputMapsUrl;
-    if (inputMapsUrl.includes('src="')) {
-      url = inputMapsUrl.match(/src="([^"]+)"/)?.[1] || inputMapsUrl;
-    }
-    setMapsUrl(url);
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-10 text-center lg:text-left">
@@ -151,19 +130,19 @@ const Tracking: React.FC = () => {
           onClick={() => setActiveTab('js')}
           className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all ${activeTab === 'js' ? 'bg-white dark:bg-slate-800 text-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
         >
-          <RefreshCw size={18} className={activeTab === 'js' ? 'animate-spin-slow' : ''} /> Real-time (JS Bonus)
+          <RefreshCw size={18} className={activeTab === 'js' ? 'animate-spin-slow' : ''} /> Real-time
         </button>
         <button 
           onClick={() => setActiveTab('excel')}
           className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all ${activeTab === 'excel' ? 'bg-white dark:bg-slate-800 text-green-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
         >
-          <FileSpreadsheet size={18} /> Excel Embed (Part 6)
+          <FileSpreadsheet size={18} /> Excel Embed
         </button>
         <button 
           onClick={() => setActiveTab('mymaps')}
           className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all ${activeTab === 'mymaps' ? 'bg-white dark:bg-slate-800 text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
         >
-          <MapIcon size={18} /> Google My Maps (Part 6)
+          <MapIcon size={18} /> Google My Maps
         </button>
       </div>
 
@@ -263,28 +242,12 @@ const Tracking: React.FC = () => {
               <div className="flex items-center gap-3 mb-6 bg-green-50 dark:bg-green-900/10 p-4 rounded-xl border border-green-100 dark:border-slate-700">
                 <FileSpreadsheet className="text-green-600" />
                 <div>
-                  <h3 className="font-bold text-green-800 dark:text-green-400">OneDrive Excel Integration (Part 6)</h3>
+                  <h3 className="font-bold text-green-800 dark:text-green-400">OneDrive Excel Integration</h3>
                   <p className="text-xs text-green-700/70">แสดงผล Dashboard จาก Excel ที่แชร์ผ่าน OneDrive</p>
                 </div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-2 mb-6">
-                <input 
-                  type="text" 
-                  value={inputExcelUrl}
-                  onChange={(e) => setInputExcelUrl(e.target.value)}
-                  placeholder="วางลิงก์ <iframe> หรือ URL จาก OneDrive Embed..."
-                  className="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl text-xs focus:ring-2 focus:ring-green-500 outline-none transition-all"
-                />
-                <button 
-                  onClick={applyExcelUrl}
-                  className="bg-green-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-green-700 transition-colors whitespace-nowrap"
-                >
-                  อัปเดต Dashboard
-                </button>
-              </div>
 
-              <div className="w-full h-[500px] bg-slate-50 dark:bg-slate-900 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center overflow-hidden">
+              <div className="w-full h-[500px] bg-slate-50 dark:bg-slate-900 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center overflow-hidden shadow-sm">
                 {excelUrl ? (
                   <iframe 
                     src={excelUrl} 
@@ -312,24 +275,8 @@ const Tracking: React.FC = () => {
                 <MapIcon className="text-blue-600" />
                 <div>
                   <h3 className="font-bold text-blue-800 dark:text-blue-400">Google My Maps Visualization</h3>
-                  <p className="text-xs text-blue-700/70">แสดงผลพิกัดจริงจากไฟล์ CSV ที่นำเข้าสู่ My Maps (Part 6)</p>
+                  <p className="text-xs text-blue-700/70">แสดงผลพิกัดจริงจากไฟล์ CSV ที่นำเข้าสู่ My Maps</p>
                 </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-2 mb-6">
-                <input 
-                  type="text" 
-                  value={inputMapsUrl}
-                  onChange={(e) => setInputMapsUrl(e.target.value)}
-                  placeholder="วางลิงก์แผนที่จาก Google My Maps..."
-                  className="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 outline-none transition-all"
-                />
-                <button 
-                  onClick={applyMapsUrl}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors whitespace-nowrap"
-                >
-                  อัปเดตแผนที่
-                </button>
               </div>
 
               <div className="aspect-[4/3] sm:aspect-video bg-slate-50 dark:bg-slate-900 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center overflow-hidden">
