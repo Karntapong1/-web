@@ -28,7 +28,7 @@ const calculateHaversine = (lat1: number, lon1: number, lat2: number, lon2: numb
   return R * c;
 };
 
-// ข้อมูลพัสดุ 10-15 รายการ (ตามโจทย์ส่วนที่ 1)
+// ข้อมูลพัสดุ 15 รายการ (ตามโจทย์ส่วนที่ 1)
 const INITIAL_PARCELS = [
   { id: 'TH-BK001', sender: 'บจก. เอสดีอู', recipient: 'สมชาย', status: 'In Transit', lat: 13.7563, lng: 100.5018, destLat: 13.8123, destLng: 100.6210, speed: 65 },
   { id: 'TH-CM002', sender: 'คลังสินค้าบางนา', recipient: 'วิภาดา', status: 'Delivered', lat: 18.7883, lng: 98.9853, destLat: 18.7883, destLng: 98.9853, speed: 0 },
@@ -42,6 +42,9 @@ const INITIAL_PARCELS = [
   { id: 'TH-SR010', sender: 'บจก. เทคโนโลยี', recipient: 'บริษัท สยาม', status: 'Pending', lat: 9.1411, lng: 99.3331, destLat: 9.2500, destLng: 99.4500, speed: 0 },
   { id: 'TH-CN011', sender: 'คลังสินค้ากลาง', recipient: 'วิชัย', status: 'In Transit', lat: 15.2124, lng: 100.1260, destLat: 15.3500, destLng: 100.2500, speed: 75 },
   { id: 'TH-ST012', sender: 'Market Place', recipient: 'ธนาธร', status: 'In Transit', lat: 14.3532, lng: 100.5689, destLat: 14.4500, destLng: 100.6500, speed: 60 },
+  { id: 'TH-UD013', sender: 'Udon Hub', recipient: 'กานดา', status: 'In Transit', lat: 17.4138, lng: 102.7872, destLat: 17.5000, destLng: 102.8500, speed: 85 },
+  { id: 'TH-PK014', sender: 'Phuket Distribution', recipient: 'สมศักดิ์', status: 'In Transit', lat: 7.8804, lng: 98.3923, destLat: 8.0000, destLng: 98.3500, speed: 50 },
+  { id: 'TH-CR015', sender: 'Chiang Rai North', recipient: 'นารี', status: 'Pending', lat: 19.9105, lng: 99.8406, destLat: 19.9500, destLng: 99.9000, speed: 0 },
 ];
 
 const LeafletMap: React.FC<{ parcels: typeof INITIAL_PARCELS }> = ({ parcels }) => {
