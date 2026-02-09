@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Map as MapIcon, FileSpreadsheet, RefreshCw, Truck, CheckCircle2, AlertCircle, ExternalLink, Info, RotateCcw, BookOpen, Navigation, Calculator, MapPin, Gauge, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Map as MapIcon, FileSpreadsheet, RefreshCw, Truck, CheckCircle2, AlertCircle, ExternalLink, Info, RotateCcw, BookOpen, Navigation, Calculator, MapPin, Gauge, Send, LayoutDashboard } from 'lucide-react';
 import L from 'leaflet';
 
 // Fix for default Leaflet marker icons
@@ -119,13 +120,18 @@ const Tracking: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-10 text-center lg:text-left">
-        <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
-          ระบบติดตามตำแหน่งพัสดุ (Real-time Tracking)
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-gray-400 max-w-3xl">
-          การบูรณาการข้อมูลพิกัดภูมิศาสตร์ (Lat/Lon) จาก Excel สู่ Web Dashboard พร้อมระบบคำนวณระยะทาง Haversine
-        </p>
+      <div className="mb-10 text-center lg:text-left flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
+            ระบบติดตามตำแหน่งพัสดุ (Real-time Tracking)
+          </h1>
+          <p className="text-lg text-slate-600 dark:text-gray-400 max-w-3xl">
+            การบูรณาการข้อมูลพิกัดภูมิศาสตร์ (Lat/Lon) จาก Excel สู่ Web Dashboard พร้อมระบบคำนวณระยะทาง Haversine
+          </p>
+        </div>
+        <Link to="/dashboard" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold shadow-lg shadow-green-600/20 transition-all transform hover:-translate-y-1">
+          <LayoutDashboard size={20} /> ดู Dashboard สรุปผล
+        </Link>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-8 bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl w-fit mx-auto lg:mx-0">
@@ -257,7 +263,7 @@ const Tracking: React.FC = () => {
                     width="100%" 
                     height="100%" 
                     frameBorder="0" 
-                    scrolling="no"
+                    scrolling="no" 
                     title="Excel Embed"
                   ></iframe>
                 ) : (

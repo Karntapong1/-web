@@ -7,6 +7,7 @@ export const NAV_ITEMS = [
   { label: 'นวัตกรรม', path: '/innovations' },
   { label: 'กรณีศึกษา', path: '/cases' },
   { label: 'ระบบติดตาม (Excel)', path: '/tracking' },
+  { label: 'Dashboard (Excel)', path: '/dashboard' },
   { label: 'อนาคต', path: '/future' },
   { label: 'อ้างอิง', path: '/references' },
 ];

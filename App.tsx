@@ -9,6 +9,7 @@ import CaseStudies from './pages/CaseStudies';
 import Future from './pages/Future';
 import References from './pages/References';
 import Tracking from './pages/Tracking';
+import Dashboard from './pages/Dashboard';
 
 // ScrollToTop component to reset scroll position on route change
 const ScrollToTop = () => {
@@ -53,6 +54,7 @@ const App: React.FC = () => {
             <Route path="/innovations" element={<Innovations />} />
             <Route path="/cases" element={<CaseStudies />} />
             <Route path="/tracking" element={<Tracking />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/future" element={<Future />} />
             <Route path="/references" element={<References />} />
           </Routes>
