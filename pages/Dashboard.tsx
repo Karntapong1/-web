@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, FileSpreadsheet } from 'lucide-react';
+import { FileSpreadsheet } from 'lucide-react';
 
 const Dashboard: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <Link to="/tracking" className="inline-flex items-center text-slate-500 hover:text-primary mb-4 transition-colors font-medium">
-          <ArrowLeft size={20} className="mr-2" /> กลับไปหน้าติดตามพัสดุ
-        </Link>
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
           <FileSpreadsheet className="text-green-600" size={32} /> 
           Dashboard (Excel)
